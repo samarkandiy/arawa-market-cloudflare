@@ -1,0 +1,135 @@
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.badge-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge-icon.license {
+  background: linear-gradient(135deg, #455a64 0%, #546e7a 100%);
+  color: white;
+}
+
+.badge-icon.secure {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.badge-icon.support {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.badge-icon.quality {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.badge-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-black);
+  line-height: 1.2;
+}
+
+.badge-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .trust-badges {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .trust-badge {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .badge-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .badge-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .badge-title {
+    font-size: 0.9rem;
+  }
+
+  .badge-subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-badges {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .trust-badge {
+    padding: 0.85rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .badge-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .badge-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .badge-title {
+    font-size: 0.85rem;
+  }
+
+  .badge-subtitle {
+    font-size: 0.75rem;
+  }
+}

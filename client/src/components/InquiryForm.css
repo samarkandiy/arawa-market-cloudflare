@@ -1,0 +1,141 @@
+.inquiry-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.inquiry-form h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-black);
+}
+
+.inquiry-form.success {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.inquiry-form.success h3 {
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+}
+
+.inquiry-form.success p {
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c00;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.required {
+  color: var(--primary-red);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-red);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #d11f1f;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Honeypot field - hidden from users but accessible to bots */
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .inquiry-form {
+    padding: 1.5rem 1rem;
+    border-radius: 6px;
+  }
+
+  .inquiry-form h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .inquiry-form.success {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  .form-group textarea {
+    min-height: 120px;
+  }
+
+  .submit-button {
+    padding: 0.85rem;
+    font-size: 1rem;
+  }
+}

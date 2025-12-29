@@ -1,0 +1,112 @@
+:root {
+  --primary-red: #ed2929;
+  --primary-black: #111111;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #dddddd;
+  --background-light: #f8f8f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* View Transitions */
+@view-transition {
+  navigation: auto;
+}
+
+/* Customize the transition animation */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+}
+
+/* Fade transition for page changes */
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Smooth transition for vehicle cards */
+.vehicle-card {
+  view-transition-name: none;
+}
+
+/* Give unique transition names to images for morphing effect */
+.vehicle-image img,
+.vehicle-card.list-mode .col-image img {
+  view-transition-name: none;
+}
+
+/* Smooth transition for view mode changes */
+.vehicle-container {
+  view-transition-name: vehicle-container;
+}
+
+::view-transition-group(vehicle-container) {
+  animation-duration: 0.4s;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.1s;
+  }
+  
+  ::view-transition-group(vehicle-container) {
+    animation-duration: 0.1s;
+  }
+}
