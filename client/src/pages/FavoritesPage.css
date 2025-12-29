@@ -1,0 +1,326 @@
+.favorites-page {
+  padding: 2rem 0;
+  min-height: 60vh;
+}
+
+.favorites-header {
+  margin-bottom: 2rem;
+}
+
+.favorites-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.favorites-page h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-black);
+}
+
+.favorites-count {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.view-switcher {
+  display: flex;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.25rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.view-button {
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-button:hover {
+  background: #f5f5f5;
+  color: var(--primary-black);
+}
+
+.view-button.active {
+  background: var(--primary-red);
+  color: white;
+}
+
+.favorites-container {
+  margin-bottom: 2rem;
+}
+
+.favorites-container.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.favorites-container.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.list-view-header {
+  display: grid;
+  grid-template-columns: 100px 2.5fr 90px 110px 110px 90px 120px 50px;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--primary-black);
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.list-view-header > div {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.header-col-favorite {
+  text-align: center;
+}
+
+.empty-favorites {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--background-light);
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.empty-favorites p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.browse-link {
+  display: inline-block;
+  background-color: var(--primary-red);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.browse-link:hover {
+  background-color: #d11f1f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(237, 41, 41, 0.3);
+}
+
+@media (max-width: 768px) {
+  .favorites-page {
+    padding: 1.5rem 0;
+  }
+
+  .favorites-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .favorites-header .header-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .favorites-page h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .favorites-count {
+    font-size: 0.9rem;
+  }
+
+  .view-switcher {
+    flex-shrink: 0;
+  }
+
+  .favorites-container.grid-view {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .favorites-container.list-view {
+    gap: 1rem;
+  }
+
+  .list-view-header {
+    display: none;
+  }
+
+  .empty-favorites {
+    padding: 3rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .empty-favorites p {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .browse-link {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Categories Section */
+.favorites-page .categories-section {
+  margin-top: 3rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.favorites-page .categories-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.favorites-page .categories-section-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.favorites-page .categories-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.favorites-page .category-card {
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.favorites-page .category-icon {
+  width: 96px;
+  height: 96px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-red);
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.favorites-page .category-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.favorites-page .category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--primary-red) 0%, #ff4444 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.favorites-page .category-card:hover::before {
+  opacity: 1;
+}
+
+.favorites-page .category-card:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(237, 41, 41, 0.3);
+}
+
+.favorites-page .category-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-black);
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.favorites-page .category-card:hover .category-name {
+  color: white;
+}
+
+.favorites-page .category-card:hover .category-icon {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .favorites-page .categories-section {
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .favorites-page .categories-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .favorites-page .categories-section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .favorites-page .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .favorites-page .category-card {
+    padding: 1rem 0.75rem;
+  }
+
+  .favorites-page .category-name {
+    font-size: 0.8rem;
+  }
+
+  .favorites-page .category-icon {
+    width: 64px;
+    height: 64px;
+  }
+}
