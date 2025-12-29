@@ -1,0 +1,34 @@
+name = "arawa-marketplace"
+compatibility_date = "2024-12-01"
+main = "workers/index.ts"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "arawa-marketplace-db"
+database_id = "74f0f7bd-a3c0-4d47-af92-d85d730f1a86"
+
+# R2 Bucket for images
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "arawa-marketplace-images"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+
+# Secrets (set via wrangler secret put)
+# JWT_SECRET - set via: wrangler secret put JWT_SECRET
+
+# Development
+[env.development]
+name = "arawa-marketplace-dev"
+
+[[env.development.d1_databases]]
+binding = "DB"
+database_name = "arawa-marketplace-db-dev"
+database_id = "your-dev-database-id-here"
+
+[[env.development.r2_buckets]]
+binding = "IMAGES"
+bucket_name = "arawa-marketplace-images-dev"
